@@ -1,13 +1,11 @@
-
 import React, { Component } from 'react';
-class Index extends Component {
+class Crumbs extends Component {
     render() {
         return (
             <div>
-                index
-
+                crumbs
             </div>
         )
     }
 }
-export default Index;
+export default Crumbs;

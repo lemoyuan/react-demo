@@ -1,13 +1,11 @@
-
 import React, { Component } from 'react';
-class Index extends Component {
+class MyHeader extends Component {
     render() {
         return (
             <div>
-                index
-
+                Header
             </div>
         )
     }
 }
-export default Index;
+export default MyHeader;

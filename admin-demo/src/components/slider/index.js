@@ -1,13 +1,11 @@
-
 import React, { Component } from 'react';
-class Index extends Component {
+class MySlider extends Component {
     render() {
         return (
             <div>
-                index
-
+                slider
             </div>
         )
     }
 }
-export default Index;
+export default MySlider;
