@@ -7,7 +7,7 @@ import Crumbs  from '@/components/crumbs'
 import MyHeader  from '@/components/header' 
 import MyMain  from '@/components/main' 
 import MySlider  from '@/components/slider' 
-import { callbackify } from 'util';
+
 
 const content = (
     <div>
@@ -18,13 +18,13 @@ const content = (
 
 
 class Index extends Component {
+
     render() {
         return (
             <Layout>
                 <MyHeader></MyHeader>
                 <Layout style={{ height:'calc(100% - 65px)'}}>
                     <MySlider></MySlider>
-                    
                     <Layout style={{ padding: '0 24px 24px' }}>
                         <Crumbs></Crumbs>
                         <MyMain></MyMain>
