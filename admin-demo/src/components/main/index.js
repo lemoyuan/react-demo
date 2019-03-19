@@ -5,8 +5,8 @@ const { Content} = Layout;
 class MyMain extends Component {
     render() {
         return (
-            <div>
-                <Content style={{background: '#fff', padding: 24, margin: 0, minHeight: 280,}}>
+            <div style={{ height:'calc(100% - 60px)'}}>
+                <Content style={{background: '#fff', padding: 24, margin: 0, height:'90%',}}>
                     Content
                 </Content>
             </div>
