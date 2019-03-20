@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Icon ,Layout} from 'antd'; // +
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const { Sider } = Layout; // +
 const SubMenu = Menu.SubMenu;
 class MySlider extends Component {
@@ -14,8 +15,8 @@ class MySlider extends Component {
                             style={{ height: '100%', borderRight: 0 }}
                         >
                             <SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
-                                <Menu.Item key="1">option1</Menu.Item>
-                                <Menu.Item key="2">option2</Menu.Item>
+                                <Menu.Item key="1" ><Link to="/">首页</Link></Menu.Item>
+                                <Menu.Item key="2"><Link to="/about">关于</Link></Menu.Item>
                                 <Menu.Item key="3">option3</Menu.Item>
                                 <Menu.Item key="4">option4</Menu.Item>
                             </SubMenu>

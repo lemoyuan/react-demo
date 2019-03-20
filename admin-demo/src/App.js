@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { main as mainConfig } from './router/index'
-import { RenderRoutes } from './router/utils.js'
 import './App.css';
+
+import Login from '@/views/login/index'
+import Index from '@/views/index/index'
 
 import { createStore } from 'redux'  //+
 import { Provider } from 'react-redux' //+
@@ -18,7 +19,8 @@ class App extends Component {
       <Provider store={store}>  
         <Router>
           <div className="App">
-            <RenderRoutes routes={mainConfig}></RenderRoutes>
+            <Route exact path="/login" component={Login}/>
+            <Route exact  path="/" component={Index}/>
           </div>
         </Router>
       </Provider> 
