@@ -1,0 +1,11 @@
+.logo,.user{
+    margin-left:30px;
+    display: inline-block;
+    color:#ddd;
+}
+.ant-menu{
+    display: inline-block;
+}
+.user{
+    float: right;
+}

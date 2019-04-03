@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu} from 'antd';
+import { connect } from "react-redux";
+import "./header.css"
 const { Header } = Layout;
 
 class MyHeader extends Component {
@@ -10,16 +12,15 @@ class MyHeader extends Component {
     }
 
     toggle = () => { 
-        // console.log(1);
-        // console.log(this.state.onSlidecollapsed());
+        console.log(this.props.userInfo);
     }
 
     render() {
-        // const { slidecollapsed } = this.props
         return (
             <div>
                <Header className="header">
-                    <div className="logo" />
+                    <div className="logo" >logo</div>
+                    
                     <Menu
                         theme="dark"
                         mode="horizontal"
@@ -30,9 +31,20 @@ class MyHeader extends Component {
                         <Menu.Item key="2">nav 2</Menu.Item>
                         <Menu.Item key="3">nav 3</Menu.Item>
                     </Menu>
+                    <div className="user">{this.props.userInfo.name}</div>
                 </Header>
             </div>
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        userInfo: state.userInfo
+    };
+};
+
+MyHeader = connect(
+    mapStateToProps,
+)(MyHeader);
 export default MyHeader;
