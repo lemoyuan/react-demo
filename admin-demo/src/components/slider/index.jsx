@@ -8,8 +8,19 @@ class MySlider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            path: ""
+            path: "1"
         };
+    }
+    componentDidMount() {
+        if(sessionStorage.getItem('path')){
+            this.setState({path: sessionStorage.getItem('path')}, function(){
+                console.log(sessionStorage.getItem('path'),this.state.path)
+            })
+        }
+    }
+    savePath(index){
+        this.setState({path: index});
+        sessionStorage.setItem('path',index);
     }
     render() {
         return (
@@ -17,18 +28,23 @@ class MySlider extends Component {
                 <Sider width={200} style={{ background: '#fff' }}>
                     <Menu
                         mode="inline"
-                        defaultSelectedKeys={[this.state.path]}
+                        selectedKeys={[this.state.path]}
                         defaultOpenKeys={['sub1']}
                         style={{ height: '100%', borderRight: 0 }}
                     >
                         <SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
                             <Menu.Item key="1" ><Link to="/" onClick={() => {
+                                this.savePath('1')
                                 this.props.onRouterPath('1');
                             }}>首页</Link></Menu.Item>
                             <Menu.Item key="2"><Link to="/about" onClick={() => {
+                                this.savePath('2')
                                 this.props.onRouterPath('2');
                             }}>关于</Link></Menu.Item>
-                            <Menu.Item key="3">option3</Menu.Item>
+                            <Menu.Item key="3" onClick={() => {
+                                this.savePath('3')
+                                this.props.onRouterPath('3');
+                            }}>option3</Menu.Item>
                             <Menu.Item key="4">option4</Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="laptop" />subnav 2</span>}>
@@ -59,7 +75,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onRouterPath: path => {
-            console.log(10023, path);
             dispatch({ type: "ROUTER_ACTION", path: path });
         }
     };

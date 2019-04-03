@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import { Layout, Menu} from 'antd';
-import { connect  } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from '@/reducer/connect'
-
 const { Header } = Layout;
 
 class MyHeader extends Component {
     constructor(props){
         super(props)
         this.state = {
-            onSlidecollapsed: this.props.onSlidecollapsed
         };
     }
 
     toggle = () => { 
         // console.log(1);
-        this.state.onSlidecollapsed()
         // console.log(this.state.onSlidecollapsed());
     }
 
@@ -28,7 +23,7 @@ class MyHeader extends Component {
                     <Menu
                         theme="dark"
                         mode="horizontal"
-                        defaultSelectedKeys={['2']}
+                        defaultSelectedKeys={['1']}
                         style={{ lineHeight: '64px' }}
                     >
                         <Menu.Item key="1" onClick={this.toggle}>nav 1</Menu.Item>
@@ -40,4 +35,4 @@ class MyHeader extends Component {
         )
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(MyHeader);
+export default MyHeader;
