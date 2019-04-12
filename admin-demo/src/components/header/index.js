@@ -12,7 +12,7 @@ class MyHeader extends Component {
     }
 
     toggle = () => { 
-        console.log(this.props.userInfo);
+        // console.log(this.props.userInfo);
     }
 
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Icon, Layout } from 'antd'; // +
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router,Link,Route } from "react-router-dom";
 import { connect } from "react-redux";
 const { Sider } = Layout; // +
 const SubMenu = Menu.SubMenu;
@@ -14,13 +14,14 @@ class MySlider extends Component {
     componentDidMount() {
         if(sessionStorage.getItem('path')){
             this.setState({path: sessionStorage.getItem('path')}, function(){
-                console.log(sessionStorage.getItem('path'),this.state.path)
+                // console.log(sessionStorage.getItem('path'),this.state.path)
             })
         }
     }
-    savePath(index){
+    savePath(index,subs){
         this.setState({path: index});
         sessionStorage.setItem('path',index);
+        sessionStorage.setItem('sub',subs);
     }
     render() {
         return (
@@ -29,22 +30,22 @@ class MySlider extends Component {
                     <Menu
                         mode="inline"
                         selectedKeys={[this.state.path]}
-                        defaultOpenKeys={['sub1']}
+                        openKeys={['sub1']}
                         style={{ height: '100%', borderRight: 0 }}
                     >
                         <SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
                             <Menu.Item key="1" ><Link to="/" onClick={() => {
-                                this.savePath('1')
+                                this.savePath('1','sub1')
                                 this.props.onRouterPath('1');
                             }}>首页</Link></Menu.Item>
                             <Menu.Item key="2"><Link to="/about" onClick={() => {
-                                this.savePath('2')
+                                this.savePath('2','sub1')
                                 this.props.onRouterPath('2');
                             }}>关于</Link></Menu.Item>
-                            <Menu.Item key="3" onClick={() => {
-                                this.savePath('3')
+                            <Menu.Item key="3" ><Link to="/about2" onClick={() => {
+                                this.savePath('3','sub1')
                                 this.props.onRouterPath('3');
-                            }}>option3</Menu.Item>
+                            }}>关于2</Link></Menu.Item>
                             <Menu.Item key="4">option4</Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="laptop" />subnav 2</span>}>

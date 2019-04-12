@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import {    Layout, Menu} from 'antd';
 import './index.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Crumbs  from '@/components/crumbs' 
 import MyHeader  from '@/components/header' 
 import MySlider  from '@/components/slider' 
@@ -23,8 +23,9 @@ class Index extends Component {
                         <Crumbs></Crumbs>
                         
                             <div>
-                                <Route exact path="/" component = { Home } />
-                                <Route path="/about" component={ About } />
+                                <Route exact path="/"  component = { Home } />
+                                <Route path="/about"  component={ About } />
+                                <Route path="/about2"  component={ About } />
                             </div>
                         
                     </Layout>
