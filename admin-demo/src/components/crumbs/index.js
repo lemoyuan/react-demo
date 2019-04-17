@@ -25,8 +25,6 @@ class Crumbs extends Component {
             '5': 'Detail',
         };
         const pathSnippets = this.props.path;
-
-        console.log(this.props.path,breadcrumbNameMap[pathSnippets],"breadcrumbNameMap[pathSnippets]" )
         const extraBreadcrumbItems = 
                 <Breadcrumb.Item key={pathSnippets}>
                     {breadcrumbNameMap[pathSnippets]}
