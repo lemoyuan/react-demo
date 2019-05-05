@@ -122,6 +122,8 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.11.0"
+    "babel-plugin-import": "^1.11.0",
+    "less": "^2.7.3",
+    "less-loader": "^5.0.0"
   }
 }

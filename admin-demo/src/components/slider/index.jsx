@@ -45,8 +45,11 @@ class MySlider extends Component {
                             <Menu.Item key="3" ><Link to="/about2" onClick={() => {
                                 this.savePath('3','sub1')
                                 this.props.onRouterPath('3');
-                            }}>关于2</Link></Menu.Item>
-                            <Menu.Item key="4">option4</Menu.Item>
+                            }}>表单提交</Link></Menu.Item>
+                            <Menu.Item key="4" ><Link to="/about3" onClick={() => {
+                                this.savePath('4','sub1')
+                                this.props.onRouterPath('4');
+                            }}>基本操作</Link></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="laptop" />subnav 2</span>}>
                             <Menu.Item key="5">option5</Menu.Item>

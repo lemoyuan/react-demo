@@ -10,6 +10,7 @@ import MySlider  from '@/components/slider'
 import Home  from '@/views/pages/home.jsx' 
 import About  from '@/views/pages/about.jsx' 
 import About2  from '@/views/pages/about2.jsx' 
+import About3  from '@/views/pages/about3.jsx' 
 
 
 class Index extends Component {
@@ -27,6 +28,7 @@ class Index extends Component {
                                 <Route exact path="/"  component = { Home } />
                                 <Route path="/about"  component={ About } />
                                 <Route path="/about2"  component={ About2 } />
+                                <Route path="/about3"  component={ About3 } />
                             </div>
                         
                     </Layout>

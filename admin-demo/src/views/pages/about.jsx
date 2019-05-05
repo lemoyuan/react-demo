@@ -19,6 +19,11 @@ class About extends React.Component {
             checkAll: false,
         }
     }
+    shouldComponentUpdate (nextProps, nextState) { 
+        console.log(nextProps, nextState,"shouldComponentUpdate")
+        return true 
+    
+    }
     handleSearch = (value) => {
         this.setState({
             dataSource: !value ? [] : [

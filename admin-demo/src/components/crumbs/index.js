@@ -15,7 +15,22 @@ class Crumbs extends Component {
             this.props.onRouterPath(sessionStorage.getItem('path'));
         }
     }
+    componentWillReceiveProps(){
+        console.log("componentWillReceiveProps")
+    }
 
+    shouldComponentUpdate () { 
+        console.log("shouldComponentUpdate")
+        return true 
+    
+    }
+    componentWillUpdate() {
+        console.log("componentWillUpdate")
+     }
+    componentWillUnmount() {
+        console.log("componentWillUnmount")
+    } 
+    
     render() {
         const breadcrumbNameMap = {
             '1': 'home',
@@ -35,7 +50,6 @@ class Crumbs extends Component {
               Home
             </Breadcrumb.Item>
           )].concat(extraBreadcrumbItems);
-          console.log(breadcrumbItems,"breadcrumbItems")
         return (
             <div>
                 <Breadcrumb style={{ margin: '16px 0' }}>

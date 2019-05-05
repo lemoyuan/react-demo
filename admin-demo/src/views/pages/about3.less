@@ -1,0 +1,33 @@
+@title-color:#f00;
+ 
+
+.mu-item{
+    background-color:#E8E8E8; 
+    height: 32px;
+    line-height: 32px;
+    width: 300px;
+    color: @title-color;
+    margin:0;
+    span{
+        margin:0 25px;
+        display: inline-block;
+    }
+    .anticon{
+        margin-right: 5px;
+    }
+    span:nth-child(3){
+        display: none;
+    }
+}
+
+.mu-item:hover{
+    span:nth-child(3){
+        display:inline-block;
+    }
+}
+.mu-item:nth-child(odd){
+    background-color:#F4F4F4; 
+}
+
+
+ 
