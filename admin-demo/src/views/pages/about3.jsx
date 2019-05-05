@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'antd';
+import { connect } from "react-redux";
 import './about3.less'
 class About3 extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class About3 extends React.Component {
         }
     }
     goLink = () => {
+        this.props.onRouterPath('3');
         this.props.history.push('/about2');
     }
     render() {
@@ -37,4 +39,24 @@ class About3 extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        path: state.path
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onRouterPath: path => {
+            dispatch({ type: "ROUTER_ACTION", path: path });
+        }
+    };
+};
+
+About3 = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(About3);
+
 export default About3

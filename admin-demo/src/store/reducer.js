@@ -8,8 +8,7 @@ const routerReducer = (state, action) => {
     }
     switch (action.type) {
         case 'ROUTER_ACTION':
-            console.log(action)
-            return { ...state, path: action.path }
+            return Object.assign({},state, {path: action.path})
         case 'USER_ACTION':
             console.log(action)
             return { ...state, userInfo: action.userInfo }

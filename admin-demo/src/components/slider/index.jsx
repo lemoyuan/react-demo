@@ -14,12 +14,12 @@ class MySlider extends Component {
     componentDidMount() {
         if(sessionStorage.getItem('path')){
             this.setState({path: sessionStorage.getItem('path')}, function(){
-                // console.log(sessionStorage.getItem('path'),this.state.path)
             })
         }
+        console.log(this.props.path,this.state.path)
+
     }
     savePath(index,subs){
-        this.setState({path: index});
         sessionStorage.setItem('path',index);
         sessionStorage.setItem('sub',subs);
     }
@@ -29,7 +29,7 @@ class MySlider extends Component {
                 <Sider width={200} style={{ background: '#fff' }}>
                     <Menu
                         mode="inline"
-                        selectedKeys={[this.state.path]}
+                        selectedKeys={[this.props.path]}
                         openKeys={['sub1']}
                         style={{ height: '100%', borderRight: 0 }}
                     >
