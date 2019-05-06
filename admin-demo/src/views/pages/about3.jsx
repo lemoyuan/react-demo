@@ -22,10 +22,15 @@ class About3 extends React.Component {
         this.props.onRouterPath('3');
         this.props.history.push('/about2');
     }
+    componentDidMount(){
+        console.log(this.props.user,this.props);
+        this.refs.inputBtn.focus();
+    }
     render() {
         let self = this;
         return(
             <div>
+                <input ref="inputBtn" type="text"/>搜索
                 {this.state.arr.map(function(item,index){ 
                     return(
                         <p className="mu-item" key={index} onClick={self.goLink}>
@@ -42,8 +47,9 @@ class About3 extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        path: state.path
-    };
+        path: state.path,
+        user:!!state.userInfo,
+    }
 };
 
 const mapDispatchToProps = dispatch => {

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {    Layout, Menu} from 'antd';
 import './index.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import Crumbs  from '@/components/crumbs' 
 import MyHeader  from '@/components/header' 
 import MySlider  from '@/components/slider' 
@@ -38,4 +39,4 @@ class Index extends Component {
         )
     }
 }
-export default Index;
+export default withRouter(Index);

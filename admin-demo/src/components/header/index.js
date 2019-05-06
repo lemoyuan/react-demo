@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Layout, Menu} from 'antd';
+import { Layout, Menu ,Popover, Button} from 'antd';
 import { connect } from "react-redux";
+import {withRouter} from "react-router-dom";
 import "./header.css"
 const { Header } = Layout;
 
@@ -12,7 +13,12 @@ class MyHeader extends Component {
     }
 
     toggle = () => { 
-        // console.log(this.props.userInfo);
+    }
+
+    logout = ()=>{
+        // this.props.histpry.push('/login');
+        console.log(this.props,"1");
+
     }
 
     render() {
@@ -31,7 +37,18 @@ class MyHeader extends Component {
                         <Menu.Item key="2">nav 2</Menu.Item>
                         <Menu.Item key="3">nav 3</Menu.Item>
                     </Menu>
-                    <div className="user">{this.props.userInfo.name}</div>
+                    <div className="user">
+                        <Popover  placement="bottomRight"  content={(
+                                <div onClick={this.logout}>
+                                    退出
+                                </div>
+                            )}  trigger="click">
+                            <span >{this.props.userInfo.name}</span>
+                            
+                        </Popover>
+                    </div>
+                    
+                    
                 </Header>
             </div>
         )
@@ -47,4 +64,4 @@ const mapStateToProps = state => {
 MyHeader = connect(
     mapStateToProps,
 )(MyHeader);
-export default MyHeader;
+export default withRouter(MyHeader);
