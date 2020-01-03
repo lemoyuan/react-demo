@@ -125,5 +125,6 @@
     "babel-plugin-import": "^1.11.0",
     "less": "^2.7.3",
     "less-loader": "^5.0.0"
-  }
+  },
+  "homepage": "https://lemoyuan.github.io/react-demo"
 }
